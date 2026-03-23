@@ -17,10 +17,18 @@ struct HomeView: View {
 
                     // Logo / header
                     VStack(spacing: 12) {
-                        Image(systemName: "envelope.open.fill")
-                            .font(.system(size: 72))
-                            .foregroundStyle(.blue)
-                            .symbolEffect(.bounce, options: .repeating.speed(0.3))
+                        Group {
+                            if #available(iOS 17, *) {
+                                Image(systemName: "envelope.open.fill")
+                                    .font(.system(size: 72))
+                                    .foregroundStyle(.blue)
+                                    .symbolEffect(.bounce, options: .repeating.speed(0.3))
+                            } else {
+                                Image(systemName: "envelope.open.fill")
+                                    .font(.system(size: 72))
+                                    .foregroundStyle(.blue)
+                            }
+                        }
 
                         Text("Email in het Engels")
                             .font(.largeTitle.bold())

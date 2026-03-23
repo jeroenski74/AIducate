@@ -24,16 +24,6 @@ enum Level: String, CaseIterable, Identifiable, Codable {
     }
 
     /// Accent colour for each level.
-    var color: Color {
-        switch self {
-        case .vmboBasisKader: return Color("LevelGreen",  bundle: nil).opacity(1)
-        case .vmboGT:         return Color("LevelBlue",   bundle: nil).opacity(1)
-        case .havo:           return Color("LevelOrange", bundle: nil).opacity(1)
-        case .vwo:            return Color("LevelPurple", bundle: nil).opacity(1)
-        }
-    }
-
-    /// Fallback colour for previews / when asset not available.
     var fallbackColor: Color {
         switch self {
         case .vmboBasisKader: return .green
